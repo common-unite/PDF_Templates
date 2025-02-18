@@ -1,0 +1,20 @@
+{
+  "orgName": "Flow Tool Kit: NPSP Extension/Giving Summaries - Release Test Org",
+  "edition": "Enterprise",
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "chatterSettings": {
+      "enableChatter": true
+    },
+    "userManagementSettings": {
+      "enableNewProfileUI": true
+    },
+    "securitySettings": {
+      "enableAdminLoginAsAnyUser": true,
+      "sessionSettings": {
+        "forceRelogin": false
+      }
+    }  }
+}

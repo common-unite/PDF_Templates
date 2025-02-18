@@ -1,0 +1,57 @@
+<!--
+ - Created by common-unite on 2/13/25.
+ -->
+
+<apex:component id="PDF_Giving_Summary_Table">
+
+    <apex:attribute name="GivingSummary" type="Giving_Summary__c" description="The giving summary record used to populate the table"/>
+
+    <apex:outputPanel rendered="{!GivingSummary.Total_Number_of_Gifts__c >= 3}" layout="block">
+        <div style="page-break-after: always">See Next Page for Gifts</div>
+    </apex:outputPanel>
+
+    <p>Below is a list of your gift(s) in {!YEAR(GivingSummary.Campaign__r.StartDate)}:</p><br/>
+
+    <!-- DONATION TABLE -->
+    <table>
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Gift Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+
+
+        <apex:repeat value="{!GivingSummary.GivingSummaryGifts__r}" var="gift">
+            <tr>
+                <td>
+                    <apex:outputText value="{0,date}">
+                        <apex:param value="{!gift.Opportunity__r.CloseDate}" />
+                    </apex:outputText>
+                </td>
+                <td>
+                    {!gift.Opportunity__r.Type}
+                </td>
+                <td style="text-align: right">
+                    <apex:outputText value="{0,number,currency}">
+                        <apex:param value="{!gift.Opportunity__r.Amount}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+        </apex:repeat>
+
+
+        </tbody>
+    </table>
+
+    <div style="text-align: right; font-weight: bold; padding: 8px;">
+        Total:&nbsp;<apex:outputText value="{0,number,currency}">
+            <apex:param value="{!GivingSummary.Total_Receiptable__c}"/>
+        </apex:outputText>
+    </div>
+
+    <c:PDF_Giving_Summary_Disclaimer />
+
+</apex:component>

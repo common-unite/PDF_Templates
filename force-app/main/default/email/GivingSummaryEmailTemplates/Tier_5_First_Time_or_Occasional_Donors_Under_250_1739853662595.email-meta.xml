@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Default email template used for Giving Summaries</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Tier 5: First-Time or Occasional Donors (Under $250)</name>
+    <pageDevName>Tier_5_First_Time_or_Occasional_Donors_Under_250</pageDevName>
+    <relatedEntityType>Giving_Summary__c</relatedEntityType>
+    <style>none</style>
+    <subject>Thank you for your support</subject>
+    <textOnly>Dear {{{Recipient.FirstName}}},
+
+Thank you so much for your generosity this year! Your gift of {{{Giving_Summary__c.Total_Receiptable__c}}}helped make a difference at {{{Organization.Name}}}, allowing us to support local programs.
+
+we&apos;ve attached your annual donation letter as a token of our appreciation. Every contribution, no matter the size, helps us move our mission forward, and we are so grateful to have you as part of our donor family.
+
+We hope you’ll stay connected and continue supporting our work! Please feel free to reach out with any questions.
+
+With gratitude,
+
+{{{Organization.Name}}}
+
+{{{Sender.Name}}}
+
+{{{Sender.Title}}}</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

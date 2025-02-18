@@ -1,0 +1,49 @@
+<!--
+ - Created by common-unite on 2/15/25.
+ -->
+
+<apex:page renderAs="pdf"
+           standardStylesheets="false"
+           showHeader="false"
+           standardController="Campaign"
+           id="PDF_Campaign_Giving_Summary_Batch">
+
+    <apex:stylesheet value="{!$Resource.PDF_Styles}"/>
+
+    <!-- HEADER -->
+    <c:PDF_Letterhead_Header />
+
+    <apex:repeat value="{!Campaign.GivingSummaries__r}" var="givingSummary">
+        <apex:outputPanel rendered="{!givingSummary.Total_Number_of_Gifts__c > 0}" layout="block" style="page-break-after:always">
+
+            <!-- Letter Date -->
+            <apex:outputText value="{0,date,MMMM dd, yyyy}">
+                <apex:param value="{!TODAY()}"/>
+            </apex:outputText><br/><br/>
+
+            <!--Address Block-->
+            <p>
+                {!givingSummary.Contact__r.Name}<br/>
+                {!givingSummary.Account__r.BillingStreet}<br/>
+                {!givingSummary.Account__r.BillingCity}, {!givingSummary.Account__r.BillingState} {!givingSummary.Account__r.BillingPostalCode}<br/>
+            </p><br/><br/>
+
+            <!--Greeting-->
+            <p>Dear {!givingSummary.Contact__r.FirstName},</p><br/>
+
+            <!--Letter Body-->
+            <apex:outputText value="{!givingSummary.Letter_Body__c}" escape="false"/>
+
+            <!--Signature Block-->
+            <c:PDF_Signature_Block />
+
+            <!--Gifts Table-->
+            <c:PDF_Giving_Summary_Table GivingSummary="{!givingSummary}" />
+
+        </apex:outputPanel>
+    </apex:repeat>
+
+    <!-- Fixed Footer -->
+    <c:PDF_Letterhead_Footer />
+
+</apex:page>

@@ -1,0 +1,38 @@
+<!--
+ - Created by common-unite on 2/9/25.
+ -->
+
+<apex:component id="Avery_5960">
+    <apex:attribute name="Campaign" type="Campaign" description="The Campaign record used to populate merge fields"/>
+
+    <apex:repeat value="{!Campaign.CampaignMembers}" var="CampaignMember">
+        <div class="label">
+            <div style="text-align:left; height: .800in; overflow: hidden; margin:0.100in;">
+
+                <!--Campaign Member is Account-->
+                <apex:outputPanel rendered="{!NOT(ISNULL(CampaignMember.AccountId))}" layout="block">
+                    <div>{!CampaignMember.Account.Name}</div>
+                    <span>{!CampaignMember.Account.BillingStreet}</span><br/>
+                    <span>{!CampaignMember.Account.BillingCity}, {!CampaignMember.Account.BillingState} {!CampaignMember.Account.BillingPostalCode}</span>
+                </apex:outputPanel>
+
+                <!--Campaign Member is Household Contact-->
+                <apex:outputPanel rendered="{!CampaignMember.Contact.Account.RecordType.DeveloperName == 'HH_Account'}" layout="block">
+                    <div>{!CampaignMember.Contact.Account.npo02__Formal_Greeting__c}</div>
+                    <div>Or Current Resident</div>
+                    <span>{!CampaignMember.Contact.Account.BillingStreet}</span><br/>
+                    <span>{!CampaignMember.Contact.Account.BillingCity}, {!CampaignMember.Contact.Account.BillingState} {!CampaignMember.Contact.Account.BillingPostalCode}</span>
+                </apex:outputPanel>
+
+                <!--Campaign Member is Organization Contact-->
+                <apex:outputPanel rendered="{!CampaignMember.Contact.Account.RecordType.DeveloperName != 'HH_Account'}" layout="block">
+                    <div>{!CampaignMember.Contact.Account.Name}</div>
+                    <div>Attention: {!CampaignMember.Contact.Name}</div>
+                    <span>{!CampaignMember.Contact.Account.BillingStreet}</span><br/>
+                    <span>{!CampaignMember.Contact.Account.BillingCity}, {!CampaignMember.Contact.Account.BillingState} {!CampaignMember.Contact.Account.BillingPostalCode}</span>
+                </apex:outputPanel>
+            </div>
+        </div>
+    </apex:repeat>
+
+</apex:component>

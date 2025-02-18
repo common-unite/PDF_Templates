@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Default for donors who give between $250 and $999</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Tier 4: Dedicated Supporters ($250 - $999)</name>
+    <pageDevName>Tier_4_Dedicated_Supporters_250_999</pageDevName>
+    <relatedEntityType>Giving_Summary__c</relatedEntityType>
+    <style>none</style>
+    <subject>Your Support Made a Difference!</subject>
+    <textOnly>Dear {{{Recipient.FirstName}}},
+
+We are so grateful for your support this past year! Your generosity of {{{Giving_Summary__c.Total_Receiptable__c}}} has helped us provide vital resources.
+
+Attached is your annual donation letter, recognizing the difference you’ve made. Every gift, no matter the size, strengthens our mission and allows us to continue serving those in need.
+
+Thank you for being part of our community. We look forward to making an even bigger impact together next year!
+
+With appreciation,
+
+{{{Organization.Name}}}
+
+{{{Sender.Name}}}
+
+{{{Sender.Title}}}</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

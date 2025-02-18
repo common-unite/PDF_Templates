@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Giving_Summary</fullName>
+    <fields>Name</fields>
+    <fields>Account__c</fields>
+    <fields>Type__c</fields>
+    <fields>Total_Receiptable__c</fields>
+    <fields>Total_Number_of_Gifts__c</fields>
+    <fields>Summary_Start__c</fields>
+    <fields>Summary_End__c</fields>
+    <fields>Status__c</fields>
+    <label>Giving Summary</label>
+</CompactLayout>

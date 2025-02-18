@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Default for donors who give between $1,000 and $4,999</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Tier 3: Sustaining Donors ($1,000 - $4,999)</name>
+    <pageDevName>Tier_3_Sustaining_Donors_1_000_4_999</pageDevName>
+    <relatedEntityType>Giving_Summary__c</relatedEntityType>
+    <style>none</style>
+    <subject>Thank You for Your Generosity!</subject>
+    <textOnly>Dear {{{Recipient.FirstName}}},
+
+Your generosity over the past year has made an incredible impact at {{{Organization.Name}}}! With your support of {{{Giving_Summary__c.Total_Receiptable__c}}}, we have been able to expand our outreach efforts.
+
+Attached is your annual donation letter, summarizing the difference you’ve made. We are so grateful for your support and hope you’ll continue to be a part of our work next year.
+
+Thank you again for your kindness and generosity. Please feel free to reach out if you have any questions!
+
+With gratitude,
+
+{{{Organization.Name}}}
+
+{{{Sender.Name}}}
+
+{{{Sender.Title}}}</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

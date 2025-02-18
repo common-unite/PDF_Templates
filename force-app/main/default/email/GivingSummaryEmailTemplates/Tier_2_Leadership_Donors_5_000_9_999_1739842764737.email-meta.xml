@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Default for donors who give between $5,000 and $9,999</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Tier 2: Leadership Donors ($5,000 - $9,999)</name>
+    <pageDevName>Tier_2_Leadership_Donors_5_000_9_999</pageDevName>
+    <relatedEntityType>Giving_Summary__c</relatedEntityType>
+    <style>none</style>
+    <subject>Your Impact is appreciated – Thank You!</subject>
+    <textOnly>Dear {{{Recipient.FirstName}}},
+
+I want to take a moment to express my heartfelt gratitude for your generosity this past year. Your contributions of {{{Giving_Summary__c.Total_Receiptable__c}}}have made a meaningful difference at {{{Organization.Name}}}, helping us expand vital programs.
+
+Attached is your annual donation letter, which outlines the impact of your gift. We are so grateful to have you as a partner in our mission, and we look forward to all we can accomplish together next year.
+
+If you have any questions or would like to discuss future initiatives, please don’t hesitate to reach out. Thank you again for being such a valued part of our community!
+
+With appreciation,
+
+{{{Organization.Name}}}
+
+{{{Sender.Name}}}
+
+{{{Sender.Title}}}</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

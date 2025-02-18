@@ -1,0 +1,29 @@
+minimum_cumulusci_version: '4.0.1'
+project:
+    name: FlowToolKit_NPSP_Giving_Summaries
+    package:
+        name: 'Flow Tool Kit: NPSP Extension/Giving Summaries'
+        description: 'This unlocked package contains Flows and Visualforce pages used for generating annual Giving Summaries for donors'
+        api_version: '62.0'
+    dependencies:
+        - github: 'https://github.com/common-unite/Flow_Tool_Kit_Public'
+        - github: 'https://github.com/SalesforceFoundation/NPSP'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/FlowToolKit_NPSP_Giving_Summaries/tests
+            options:
+                outputdir: robot/FlowToolKit_NPSP_Giving_Summaries/results
+
+    robot_testdoc:
+        options:
+            path: robot/FlowToolKit_NPSP_Giving_Summaries/tests
+            output: robot/FlowToolKit_NPSP_Giving_Summaries/doc/FlowToolKit_NPSP_Giving_Summaries_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75

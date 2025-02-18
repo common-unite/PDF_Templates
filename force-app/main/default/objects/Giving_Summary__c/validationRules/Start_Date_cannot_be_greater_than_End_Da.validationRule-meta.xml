@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Date_cannot_be_greater_than_End_Da</fullName>
+    <active>true</active>
+    <errorConditionFormula>Summary_Start__c &gt; Summary_End__c</errorConditionFormula>
+    <errorDisplayField>Summary_Start__c</errorDisplayField>
+    <errorMessage>Start Date cannot be greater than End Date</errorMessage>
+</ValidationRule>

@@ -1,0 +1,51 @@
+<!--
+ - Created by common-unite on 2/9/25.
+ -->
+
+<apex:page renderAs="pdf"
+           applyHtmlTag="false"
+           applyBodyTag="false"
+           standardStylesheets="false"
+           showHeader="false"
+           standardController="Campaign"
+           id="Campaign_Print_Mailing_Labels" >
+
+    <html lang="us_en">
+    <head>
+        <style>
+            @page {
+                width:8.5in;
+                height:11in;
+                margin-top:0.5in;
+                margin-bottom:0.5in;
+                margin-left:0in;
+                margin-right:0in;
+            }
+
+            .label{
+                font-size:14px;
+                width: 2.625in; /* plus .6 inches from padding */
+                height: 1in; /* plus .125 inches from padding */
+
+                margin-left: 0.0625in;
+                margin-top:0in;
+                margin-bottom:0in;
+                margin-right: 0.0625in;
+                overflow: hidden;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+
+    <div style="page-break-after:always">
+        <span style="font-size:20px"><b>{!Campaign.Name} Labels</b>:</span><br/>
+        Scroll Down To Next Page To View Labels...
+    </div>
+
+    <c:PDF_Avery_5960_Label Campaign="{!Campaign}"/>
+
+    </body>
+    </html>
+
+</apex:page>

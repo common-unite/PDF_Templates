@@ -1,0 +1,62 @@
+<!--
+ - Created by common-unite on 2/7/25.
+ -->
+
+<apex:page renderAs="pdf"
+        applyHtmlTag="false"
+        applyBodyTag="false"
+        standardStylesheets="false"
+        showHeader="false"
+        standardController="Campaign"
+        id="Campaign_Attendance_List">
+
+    <apex:stylesheet value="{!$Resource.PDF_Styles}"/>
+
+    <html lang="us_en">
+
+    <head>
+        <style>
+            @page {
+
+                @top-center {
+                    content: element(header);
+                }
+
+                @bottom-right {
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+
+                @bottom-left {
+                    content: "{!Campaign.Name}";
+                }
+
+                size: letter; /* Letter size */
+                margin-left: 0.25in;
+                margin-right: 0.25in;
+                margin-top: 0.75in;
+                margin-bottom: 0.75in;
+            }
+
+            div.header {
+                position: running(header);
+                display: table;
+                width: 100%;
+                padding: 20px;
+            }
+
+            div.header > span {
+                display: table-cell;
+            }
+
+        </style>
+        <title></title>
+    </head>
+
+    <body>
+
+    <c:PDF_Campaign_Attendance_List Campaign="{!Campaign}"/>
+
+    </body>
+    </html>
+
+</apex:page>

@@ -1,0 +1,43 @@
+<!--
+ - Created by common-unite on 2/9/25.
+ -->
+
+<apex:component id="Campaign_Attendance_Not_Registered_Table">
+
+    <apex:attribute name="Campaign" type="Campaign" description="The Campaign record used to populate merge fields"/>
+
+    <h1 style="text-align:center;">{!Campaign.Name}<br/>Not Registered List</h1>
+
+    <table>
+        <tr>
+            <th style="width: 40%">Name</th>
+            <th style="width: 40%">E-mail Address</th>
+            <th>Phone Number</th>
+        </tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+    </table>
+
+</apex:component>

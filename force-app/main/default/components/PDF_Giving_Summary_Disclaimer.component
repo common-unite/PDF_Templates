@@ -1,0 +1,14 @@
+<!--
+ - Created by common-unite on 2/13/25.
+ -->
+
+<apex:component id="PDF_Giving_Summary_Disclaimer">
+    <!-- DISCLAIMER / FOOTER TEXT -->
+    <p class="tax-disclaimer" style="margin-top:10px">
+        <em>
+            No goods or services were received in exchange for these contributions.
+            The {!$Organization.Name} is a 501(c)(3) non-profit organization,
+            and your gifts are tax-deductible to the fullest extent allowed by law.
+        </em>
+    </p>
+</apex:component>

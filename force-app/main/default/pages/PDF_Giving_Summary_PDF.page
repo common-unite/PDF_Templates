@@ -1,0 +1,43 @@
+<!--
+ - Created by common-unite on 2/13/25.
+ -->
+
+<apex:page renderAs="pdf"
+           standardStylesheets="false"
+           showHeader="false"
+           standardController="Giving_Summary__c"
+           id="Giving_Summary_PDF">
+
+    <apex:stylesheet value="{!$Resource.PDF_Styles}"/>
+
+    <!-- HEADER -->
+    <c:PDF_Letterhead_Header />
+
+    <!-- Letter Date -->
+    <apex:outputText value="{0,date,MMMM dd, yyyy}">
+        <apex:param value="{!TODAY()}"/>
+    </apex:outputText><br/><br/>
+
+    <!--Address Block-->
+    <p>
+        {!Giving_Summary__c.Contact__r.Name}<br/>
+        {!Giving_Summary__c.Account__r.BillingStreet}<br/>
+        {!Giving_Summary__c.Account__r.BillingCity}, {!Giving_Summary__c.Account__r.BillingState} {!Giving_Summary__c.Account__r.BillingPostalCode}<br/>
+    </p><br/><br/>
+
+    <!--Greeting-->
+    <p>Dear {!Giving_Summary__c.Contact__r.FirstName},</p><br/>
+
+    <!--Letter Body-->
+    <apex:outputText value="{!Giving_Summary__c.Letter_Body__c}" escape="false"/>
+
+    <!--Signature Block-->
+    <c:PDF_Signature_Block />
+
+    <!--Gifts Table-->
+    <c:PDF_Giving_Summary_Table GivingSummary="{!Giving_Summary__c}" />
+
+    <!-- Fixed Footer -->
+    <c:PDF_Letterhead_Footer />
+
+</apex:page>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scheduled_Send_Date__c</fullName>
+    <inlineHelpText>When assigned this Giving Summary will be sent to the related Contact at the specified date and time. Note: the Giving Summary must be set to &quot;Email&quot;</inlineHelpText>
+    <label>Scheduled Send Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>
