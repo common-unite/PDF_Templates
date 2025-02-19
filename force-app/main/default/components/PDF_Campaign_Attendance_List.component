@@ -8,7 +8,7 @@
 
     <!--Running Header | Displayed on Every Page-->
     <div class="header">
-        <span>{!Campaign.RecordType.Name}: {!Campaign.Type}</span>
+        <span>{!Campaign.Type}</span>
         <span style="text-align:right;">
                 <apex:outputText value="{0,date}">
                     <apex:param value="{!Campaign.StartDate}" />

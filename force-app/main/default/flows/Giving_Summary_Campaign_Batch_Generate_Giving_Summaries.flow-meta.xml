@@ -443,12 +443,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>RecordTypeId</field>
-            <value>
-                <elementReference>Campaign.RecordTypeId</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>StartDate</field>
             <value>
                 <elementReference>Campaign.StartDate</elementReference>
@@ -489,7 +483,6 @@
         <queriedFields>OwnerId</queriedFields>
         <queriedFields>Name</queriedFields>
         <queriedFields>Description</queriedFields>
-        <queriedFields>RecordTypeId</queriedFields>
         <queriedFields>Type</queriedFields>
         <queriedFields>Giving_Summaries_Generated__c</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
