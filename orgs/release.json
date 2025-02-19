@@ -16,5 +16,20 @@
       "sessionSettings": {
         "forceRelogin": false
       }
-    }  }
+    },
+    "CampaignSettings": {
+      "enableAccountsAsCM" : true
+    },
+    "EmailTemplateSettings": {
+      "enableTemplateEnhancedFolderPref": true
+    }
+  },
+  "objectSettings": {
+    "account": {
+      "defaultRecordType": "default"
+    },
+    "opportunity": {
+      "defaultRecordType": "donation"
+    }
+  }
 }

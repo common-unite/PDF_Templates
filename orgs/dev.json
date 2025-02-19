@@ -19,6 +19,20 @@
     },
     "languageSettings": {
       "enableTranslationWorkbench": true
+    },
+    "CampaignSettings": {
+      "enableAccountsAsCM" : true
+    },
+    "EmailTemplateSettings": {
+      "enableTemplateEnhancedFolderPref": true
+    }
+  },
+  "objectSettings": {
+    "account": {
+      "defaultRecordType": "default"
+    },
+    "opportunity": {
+      "defaultRecordType": "donation"
     }
   }
 }

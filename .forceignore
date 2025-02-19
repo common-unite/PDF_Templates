@@ -10,3 +10,13 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+**/email/GivingSummaryEmailTemplates/Tier_1_Major_Donors_10_000_1739843110119.email
+**/email/GivingSummaryEmailTemplates/Tier_1_Major_Donors_10_000_1739843110119.email-meta.xml
+**/email/GivingSummaryEmailTemplates/Tier_2_Leadership_Donors_5_000_9_999_1739842764737.email
+**/email/GivingSummaryEmailTemplates/Tier_2_Leadership_Donors_5_000_9_999_1739842764737.email-meta.xml
+**/email/GivingSummaryEmailTemplates/Tier_3_Sustaining_Donors_1_000_4_999_1739842548127.email
+**/email/GivingSummaryEmailTemplates/Tier_3_Sustaining_Donors_1_000_4_999_1739842548127.email-meta.xml
+**/email/GivingSummaryEmailTemplates/Tier_4_Dedicated_Supporters_250_999_1739842208974.email
+**/email/GivingSummaryEmailTemplates/Tier_4_Dedicated_Supporters_250_999_1739842208974.email-meta.xml
+**/email/GivingSummaryEmailTemplates/Tier_5_First_Time_or_Occasional_Donors_Under_250_1739853662595.email
+**/email/GivingSummaryEmailTemplates/Tier_5_First_Time_or_Occasional_Donors_Under_250_1739853662595.email-meta.xml
