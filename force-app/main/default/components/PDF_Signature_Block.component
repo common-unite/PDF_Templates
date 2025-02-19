@@ -4,7 +4,7 @@
 
 <apex:component id="PDF_Signature_Block">
     <!--Signature Block-->
-    <img width="200px" alt="signature" src="https://common-unite--demo.sandbox.file.force.com/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068U9000003JBMD&operationContext=CHATTER&contentId=05TU90000063RtF" />
+    <img width="200px" alt="signature" src="/file-asset-public/demo_signature" />
     <p>
         Robert Wright <br/>
         Founder | Developer <br/><br/>

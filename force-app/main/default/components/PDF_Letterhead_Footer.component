@@ -14,7 +14,7 @@
                     </p>
                 </td>
                 <td style="vertical-align:bottom;border:none;padding-left:0.25in; padding-right:0.25in; text-align: right">
-                    <apex:image url="https://common-unite--demo.sandbox.file.force.com/sfc/servlet.shepherd/version/renditionDownload?rendition=ORIGINAL_Png&versionId=068U9000003ICVg&operationContext=CHATTER&contentId=05TU90000061Tqz" width="0.5in"/>
+                    <apex:image url="/file-asset-public/CommonUniteIconWhite" width="0.5in"/>
                     <p style="margin-top: 5px;">
                         support@common-unite.com <br/>
                         common-unite.my.site.com
