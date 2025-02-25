@@ -14,7 +14,7 @@
                     </p>
                 </td>
                 <td style="vertical-align:bottom;border:none;padding-left:0.25in; padding-right:0.25in; text-align: right">
-                    <apex:image url="/file-asset-public/CommonUniteIconWhite" width="0.5in"/>
+                    <img src="/file-asset-public/CommonUniteIconWhite" width="0.5in" alt="CommonUniteIconWhite"/>
                     <p style="margin-top: 5px;">
                         support@common-unite.com <br/>
                         common-unite.my.site.com
