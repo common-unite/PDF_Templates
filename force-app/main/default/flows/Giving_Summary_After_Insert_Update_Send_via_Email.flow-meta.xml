@@ -4,7 +4,7 @@
         <name>Send_Email</name>
         <label>Send Email</label>
         <locationX>704</locationX>
-        <locationY>792</locationY>
+        <locationY>900</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <connector>
@@ -143,7 +143,7 @@
         <name>Switch_Email_Template</name>
         <label>Switch</label>
         <locationX>440</locationX>
-        <locationY>684</locationY>
+        <locationY>792</locationY>
         <defaultConnector>
             <targetReference>Send_Email</targetReference>
         </defaultConnector>
@@ -158,8 +158,15 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Email_Template</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Email_Template</targetReference>
+                <targetReference>Send_Email_Template</targetReference>
             </connector>
             <label>Has Email Template</label>
         </rules>
@@ -194,7 +201,7 @@
         <locationY>576</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Switch_Email_Template</targetReference>
+            <targetReference>Email_Template</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -211,11 +218,11 @@
     <recordLookups>
         <name>Email_Template</name>
         <label>Email Template</label>
-        <locationX>176</locationX>
-        <locationY>792</locationY>
+        <locationX>440</locationX>
+        <locationY>684</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Send_Email_Template</targetReference>
+            <targetReference>Switch_Email_Template</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -233,7 +240,7 @@
         <name>Set_Delivered</name>
         <label>Set Delivered</label>
         <locationX>440</locationX>
-        <locationY>1224</locationY>
+        <locationY>1332</locationY>
         <inputAssignments>
             <field>Error_Message__c</field>
             <value>
@@ -258,7 +265,7 @@
         <name>Set_Error_Message</name>
         <label>Set Error Message</label>
         <locationX>968</locationX>
-        <locationY>900</locationY>
+        <locationY>1008</locationY>
         <inputAssignments>
             <field>Error_Message__c</field>
             <value>
