@@ -1,0 +1,33 @@
+<!--
+ - Created by common-unite on 2/25/25.
+ -->
+
+<apex:component id="PDF_Giving_Summary">
+
+    <apex:attribute name="GivingSummary" type="Giving_Summary__c" description="The giving summary record used to populate the table"/>
+
+    <!-- Letter Date -->
+    <apex:outputText value="{0,date,MMMM dd, yyyy}">
+        <apex:param value="{!TODAY()}"/>
+    </apex:outputText><br/><br/>
+
+    <!--Address Block-->
+    <p>
+        {!GivingSummary.Contact__r.Name}<br/>
+        {!GivingSummary.Account__r.BillingStreet}<br/>
+        {!GivingSummary.Account__r.BillingCity}, {!GivingSummary.Account__r.BillingState} {!GivingSummary.Account__r.BillingPostalCode}<br/>
+    </p><br/><br/>
+
+    <!--Greeting-->
+    <p>Dear {!GivingSummary.Contact__r.FirstName},</p><br/>
+
+    <!--Letter Body-->
+    <apex:outputText value="{!GivingSummary.Letter_Body__c}" escape="false"/>
+
+    <!--Signature Block-->
+    <c:PDF_Signature_Block />
+
+    <!--Gifts Table-->
+    <c:PDF_Giving_Summary_Table GivingSummary="{!GivingSummary}" />
+
+</apex:component>
