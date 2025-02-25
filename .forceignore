@@ -20,3 +20,9 @@ package.xml
 **/email/GivingSummaryEmailTemplates/Tier_4_Dedicated_Supporters_250_999_1739842208974.email-meta.xml
 **/email/GivingSummaryEmailTemplates/Tier_5_First_Time_or_Occasional_Donors_Under_250_1739853662595.email
 **/email/GivingSummaryEmailTemplates/Tier_5_First_Time_or_Occasional_Donors_Under_250_1739853662595.email-meta.xml
+**/pages/PDF_Campaign_Attendance_List.page
+**/pages/PDF_Campaign_Attendance_List.page-meta.xml
+**/components/PDF_Campaign_Attendance_List.component
+**/components/PDF_Campaign_Attendance_List.component-meta.xml
+**/components/PDF_Campaign_Walk_In_Signup_Table.component
+**/components/PDF_Campaign_Walk_In_Signup_Table.component-meta.xml
