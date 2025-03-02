@@ -95,10 +95,6 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <pageAccesses>
-        <apexPage>PDF_Campaign_Attendance_List</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
-    <pageAccesses>
         <apexPage>PDF_Campaign_Giving_Summary_Batch</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
