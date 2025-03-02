@@ -1,0 +1,49 @@
+<!--
+ - Created by common-unite on 3/2/25.
+ -->
+
+<apex:page renderAs="pdf"
+           standardStylesheets="false"
+           showHeader="false"
+           standardController="Opportunity"
+           applyBodyTag="false"
+           applyHtmlTag="false"
+           id="PDF_Opportunity_Donation_Acknowledgment">
+
+    <head>
+        <!--Default Stylesheet-->
+        <apex:stylesheet value="{!$Resource.PDF_Styles}"/>
+
+        <style>
+            @page {
+
+                @top-center {
+                    content: element(header);
+                }
+
+                @bottom-left {
+                    content: element(footer);
+                }
+
+                margin-left: 0;
+                margin-right: 0;
+                margin-top: 1.5in;
+                margin-bottom: 1.125in;
+
+                size: letter; /* Letter size */
+
+            }
+        </style>
+        <title>Donation Acknowledgment</title>
+    </head>
+
+    <!-- HEADER -->
+    <c:PDF_Letterhead_Header />
+
+    <!-- Fixed Footer -->
+    <c:PDF_Letterhead_Footer />
+
+    <!-- Gift Acknowledgment Letter -->
+    <c:PDF_Gift_Acknowledgement Opportunity="{!Opportunity}" />
+
+</apex:page>

@@ -1,0 +1,36 @@
+<!--
+ - Created by common-unite on 3/1/25.
+ -->
+
+<apex:component id="PDF_Gift_Acknowledgement">
+
+    <apex:attribute name="Opportunity" type="Opportunity" description="The Opportunity record used to populate the template"/>
+
+    <!-- Letter Date -->
+    <apex:outputText value="{0,date,MMMM dd, yyyy}">
+        <apex:param value="{!BLANKVALUE(Opportunity.npsp__Acknowledgment_Date__c,TODAY())}"/>
+    </apex:outputText><br/><br/>
+
+    <!--Address Block-->
+    <p>
+        {!Opportunity.npsp__Primary_Contact__r.Name}<br/>
+        {!Opportunity.Account.BillingStreet}<br/>
+        {!Opportunity.Account.BillingCity}, {!Opportunity.Account.BillingState} {!Opportunity.Account.BillingPostalCode}<br/>
+    </p><br/><br/>
+
+    <!--Greeting-->
+    <p>Dear {!Opportunity.npsp__Primary_Contact__r.FirstName},</p><br/>
+
+    <!--Letter Body-->
+    <apex:outputText value="{!Opportunity.Acknowledgment_Letter_Body__c}" escape="false"/>
+
+    <!--Signature Block-->
+    <c:PDF_Signature_Block />
+
+    <!--Payments Table-->
+    <c:PDF_OppPayments_Table Opportunity="{!Opportunity}"/>
+
+    <!--Tax Deduction Disclaimer-->
+    <c:PDF_Giving_Summary_Disclaimer />
+
+</apex:component>
