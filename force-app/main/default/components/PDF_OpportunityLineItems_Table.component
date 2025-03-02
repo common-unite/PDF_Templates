@@ -1,0 +1,72 @@
+<!--
+ - Created by common-unite on 3/2/25.
+ -->
+
+<apex:component id="PDF_OpportunityLineItems_Table">
+    <apex:attribute name="Opportunity" type="Opportunity" description="The Opportunity record used to populate the table"/>
+
+    <!--Line Items Table-->
+    <table>
+        <thead>
+        <tr>
+            <th>QTY</th>
+            <th>Description</th>
+            <th>Unit Price</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <!--Line Items-->
+        <apex:repeat value="{!Opportunity.OpportunityLineItems}" var="LineItem">
+            <tr>
+                <td style="width: 25px; text-align: right">
+                    <apex:outputText value="{0,number}">
+                        <apex:param value="{!LineItem.Quantity}"/>
+                    </apex:outputText>
+                </td>
+                <td class="align-left">{!LineItem.Product2.Name}</td>
+                <td style="width: 125px; text-align: right">
+                    <apex:outputText value="{0,number,currency}">
+                        <apex:param value="{!LineItem.UnitPrice}"/>
+                    </apex:outputText>
+                </td>
+                <td style="width: 125px; text-align: right">
+                    <apex:outputText value="{0,number,currency}">
+                        <apex:param value="{!LineItem.TotalPrice}"/>
+                    </apex:outputText>
+                </td>
+            </tr>
+        </apex:repeat>
+
+        <!--Subtotal-->
+        <tr class="totals-summary">
+            <td></td>
+            <td></td>
+            <td class="align-left">Subtotal</td>
+            <td style="text-align: right">$0.00</td>
+        </tr>
+
+        <!--Sales Tax-->
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="align-left">Sales Tax (%)</td>
+            <td style="text-align: right">$0.00</td>
+        </tr>
+
+        <!--Total Tax-->
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="totals align-left">Total (USD)</td>
+            <td class="totals" style="text-align: right">
+                <apex:outputText value="{0,number,currency}">
+                    <apex:param value="{!Opportunity.Amount}"/>
+                </apex:outputText>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</apex:component>

@@ -1,0 +1,96 @@
+<!--
+ - Created by common-unite on 3/1/25.
+ -->
+
+<apex:component id="PDF_Opportunity_Receipt">
+
+
+    <html lang="en_us">
+    <head>
+        <title>Opportunity Receipt</title>
+    </head>
+    <body>
+
+    <div class="header">
+        <div class="header-left">
+            <p>Your Company Inc.</p>
+            <p>1234 Company St</p>
+            <p>Company Town, ST 12345</p>
+        </div>
+        <div class="logo-placeholder">
+            <p>Upload Logo</p>
+        </div>
+    </div>
+
+    <div class="receipt-title">SALES RECEIPT</div>
+
+    <div class="info-section">
+        <div class="info-left">
+            <p>Billed To</p>
+            <p>Customer Name</p>
+            <p>1234 Customer St</p>
+            <p>Customer Town, ST 12345</p>
+        </div>
+        <div class="info-right">
+            <p>Receipt # 0000457</p>
+            <p>Receipt date 11-04-2023</p>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>QTY</th>
+            <th>Description</th>
+            <th>Unit Price</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>3</td>
+            <td>Blue Cotton T-Shirt</td>
+            <td>$20.00</td>
+            <td>$60.00</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Women's Leather Handbag</td>
+            <td>$80.00</td>
+            <td>$160.00</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Pair of Running Shoes</td>
+            <td>$50.00</td>
+            <td>$250.00</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Ceramic Coffee Mug</td>
+            <td>$10.00</td>
+            <td>$40.00</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="totals">
+        <tr>
+            <td>Subtotal</td>
+            <td>$510.00</td>
+        </tr>
+        <tr>
+            <td>Sales Tax (5%)</td>
+            <td>$25.50</td>
+        </tr>
+        <tr>
+            <td>Total (USD)</td>
+            <td>$535.50</td>
+        </tr>
+    </table>
+
+    </body>
+    </html>
+
+
+</apex:component>

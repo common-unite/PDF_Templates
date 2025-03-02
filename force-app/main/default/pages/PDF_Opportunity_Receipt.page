@@ -1,0 +1,144 @@
+<!--
+ - Created by common-unite on 3/2/25.
+ -->
+
+<apex:page renderAs="pdf"
+           standardStylesheets="false"
+           showHeader="false"
+           standardController="Opportunity"
+           applyBodyTag="false"
+           applyHtmlTag="false"
+           id="PDF_Opportunity_Receipt">
+
+    <head>
+        <!--Default Stylesheet-->
+        <apex:stylesheet value="{!$Resource.PDF_Styles}"/>
+
+        <style>
+
+            @page {
+
+                @top-center {
+                    content: element(header);
+                }
+
+                @bottom-left {
+                    content: element(footer);
+                }
+
+                margin-left: 0;
+                margin-right: 0;
+                margin-top: 1.5in;
+                margin-bottom: 1.125in;
+
+                size: letter; /* Letter size */
+
+            }
+
+            .accent {
+                color: #26854c;  /* Accent color for "RECEIPT" */
+            }
+
+            /* Main receipt title */
+            .receipt-title {
+                font-size: 36px;
+                font-weight: 900;
+                color: #26854c;  /* Accent color for "RECEIPT" */
+                margin-bottom: 20px;
+                text-align: right;
+            }
+
+            /* Billed To and Receipt Info section */
+            .info-section {
+                display: inline-table;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .info-left, .info-right {
+                width: 50%;
+                display: table-cell;
+                position: relative;
+                vertical-align: bottom;
+            }
+
+            .receipt-number {
+                width: 250px;
+                margin-left: auto;
+
+            }
+            .receipt-number td {
+                border: none;
+                text-align: right;
+            }
+
+            thead th {
+                color: white;
+                background-color: #26854c;
+                padding: 8px;
+                text-align: left;
+                border: 1px solid #ddd;
+            }
+
+            .receipt td {
+                border: none;
+            }
+
+            .totals-summary td {
+                border-top: 2px solid #26854c;
+            }
+
+            td.totals {
+                border-top: 2px solid #26854c;
+                border-bottom: 2px solid #26854c;
+                color: #26854c;
+                font-weight: 900;
+                background-color: rgb(233,239,235);
+            }
+
+        </style>
+        <title>Opportunity Receipt</title>
+    </head>
+
+    <!-- HEADER -->
+    <c:PDF_Letterhead_Header />
+
+    <!-- Fixed Footer -->
+    <c:PDF_Letterhead_Footer />
+
+    <!-- Receipt TITLE -->
+    <div class="receipt-title">R E C E I P T</div>
+
+    <div class="receipt">
+        <!--Receipt Information-->
+        <div class="info-section">
+            <div class="info-left">
+                <p class="accent"><b>Billed To</b></p>
+                <p>{!Opportunity.Account.Name}</p>
+                <p>{!Opportunity.Account.BillingStreet}</p>
+                <p>{!Opportunity.Account.BillingCity}, {!Opportunity.Account.BillingState} {!Opportunity.Account.BillingPostalCode}</p>
+            </div>
+            <div class="info-right">
+                <table class="receipt-number">
+                    <tr><td class="accent"><b>Receipt #</b></td><td>0000000</td></tr>
+                    <tr>
+                        <td class="accent"><b>Receipt date</b></td>
+                        <td>
+                            <apex:outputText value="{0,date}">
+                                <apex:param value="{!Opportunity.CloseDate}" />
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!--Payments Table-->
+        <c:PDF_OppPayments_Table Opportunity="{!Opportunity}"/>
+
+        <!--Line Items Table-->
+        <c:PDF_OpportunityLineItems_Table Opportunity="{!Opportunity}"/>
+
+    </div>
+
+</apex:page>

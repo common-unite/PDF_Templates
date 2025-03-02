@@ -1,0 +1,44 @@
+<!--
+ - Created by common-unite on 3/2/25.
+ -->
+
+<apex:component id="PDF_OppPayments_Table">
+    <apex:attribute name="Opportunity" type="Opportunity" description="The Opportunity record used to populate the table"/>
+
+    <!--Payment Table-->
+    <div style="width: 100%; margin-bottom: 20px">
+        <table>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Payment Method</th>
+                <th>Reference #</th>
+                <th>Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <!--Payments Items-->
+            <apex:repeat value="{!Opportunity.npe01__OppPayment__r}" var="Payment">
+                <apex:outputPanel layout="none" rendered="{!Payment.npe01__Paid__c}">
+                    <tr>
+                        <td class="align-left">
+                            <apex:outputText value="{0,Date}">
+                                <apex:param value="{!Payment.npe01__Payment_Date__c}"/>
+                            </apex:outputText>
+                        </td>
+                        <td class="align-left">{!Payment.npe01__Payment_Method__c}</td>
+                        <td class="align-left">{!Payment.npe01__Check_Reference_Number__c}</td>
+                        <td style="text-align: right">
+                            <apex:outputText value="{0,number,currency}">
+                                <apex:param value="{!Payment.npe01__Payment_Amount__c}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                </apex:outputPanel>
+            </apex:repeat>
+
+            </tbody>
+        </table>
+    </div>
+</apex:component>
