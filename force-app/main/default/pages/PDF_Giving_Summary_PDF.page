@@ -10,8 +10,6 @@
            applyBodyTag="false"
            id="Giving_Summary_PDF">
 
-    <html lang="en_us">
-
     <head>
         <!--Default Stylesheet-->
         <apex:stylesheet value="{!$Resource.PDF_Styles}"/>
@@ -23,18 +21,17 @@
         <title>Giving Summary PDF</title>
     </head>
 
-    <body>
+    <!--IMPORTANT HEADER AND FOOTER MUST BE LOADED FIRST-->
 
     <!-- HEADER -->
     <c:PDF_Letterhead_Header />
 
-    <!--PDF Template-->
-    <c:PDF_Giving_Summary GivingSummary="{!Giving_Summary__c}"/>
-
     <!-- Fixed Footer -->
     <c:PDF_Letterhead_Footer />
 
-    </body>
+    <!--IMPORTANT HEADER AND FOOTER MUST BE LOADED FIRST-->
 
-    </html>
+    <!--PDF Template-->
+    <c:PDF_Giving_Summary GivingSummary="{!Giving_Summary__c}"/>
+
 </apex:page>

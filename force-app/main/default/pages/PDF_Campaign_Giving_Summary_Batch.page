@@ -10,8 +10,6 @@
            applyHtmlTag="false"
            id="PDF_Campaign_Giving_Summary_Batch">
 
-    <html lang="en_us">
-
     <head>
         <!--Default Stylesheet-->
         <apex:stylesheet value="{!$Resource.PDF_Styles}"/>
@@ -23,10 +21,15 @@
         <title>Giving Summary Batch PDF</title>
     </head>
 
-    <body>
+    <!--IMPORTANT HEADER AND FOOTER MUST BE LOADED FIRST-->
 
     <!-- HEADER -->
     <c:PDF_Letterhead_Header />
+
+    <!-- Fixed Footer -->
+    <c:PDF_Letterhead_Footer />
+
+    <!--IMPORTANT HEADER AND FOOTER MUST BE LOADED FIRST-->
 
     <!--Repeater loops over each related giving summary and generates PDF-->
     <apex:repeat value="{!Campaign.GivingSummaries__r}" var="givingSummary">
@@ -38,10 +41,4 @@
         </apex:outputPanel>
     </apex:repeat>
 
-    <!-- Fixed Footer -->
-    <c:PDF_Letterhead_Footer />
-
-    </body>
-
-    </html>
 </apex:page>
