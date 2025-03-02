@@ -55,6 +55,11 @@
         <field>Giving_Summary__c.Total_Receiptable__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Opportunity.Acknowledgment_Letter_Body__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Giving Summary Manager</label>
     <license>Salesforce</license>
@@ -104,6 +109,14 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>PDF_Giving_Summary_PDF</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PDF_Opportunity_Donation_Acknowledgment</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>PDF_Opportunity_Receipt</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <tabSettings>
